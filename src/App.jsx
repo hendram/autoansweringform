@@ -5,6 +5,7 @@ import SmartDumpBox from "./SmartDumpBox/src/App.jsx";
 
 export default function App() {
   const corporateRef = useRef(null);
+  const topicRef = useRef(null);
   const searchedRef = useRef(null);
   const engineRef = useRef(null);
   const smartRef = useRef(null);
@@ -25,6 +26,7 @@ const handleCorporateSubmit = async () => {
   const payload = {
     topic: {
       corporate: corporateRef.current.value,
+      topic: topicRef.current.value
     },
   };
   try {
@@ -96,9 +98,15 @@ return (
       <h2 className="app-title">Q&amp;A Generator Checker</h2>
 
 <div className="field corporate-field">
-  <label className="field-label">Corporate Knowledge Based</label>
+  <label className="field-label">Corporate Knowledge Based Url</label>
   <input ref={corporateRef} type="text" className="field-input" />
 </div>
+
+<div className="field corporate-field">
+  <label className="field-label">Topic</label>
+  <input ref={topicRef} type="text" className="field-input" />
+</div>
+
 
 <button onClick={handleCorporateSubmit} className="submit-btn">
   Submit Corporate
