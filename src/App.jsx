@@ -23,13 +23,18 @@ export default function App() {
     forceUpdate((prev) => !prev); // trigger re-render
   };
 
-  // Handle Filter Change
-   const handleFilterChange = (e) => {
-    const value = e.target.value;
-    if (value && searchedRef.current) {
-      searchedRef.current.value += ` ${value}`;
+const handlePillClick = (value) => {
+  if (searchedRef.current) {
+    // if box is empty, just add value
+    // else append with a space
+    if (searchedRef.current.value.trim() === "") {
+      searchedRef.current.value = value;
+    } else {
+      searchedRef.current.value += " " + value;
     }
-  };
+    searchedRef.current.focus(); // optional, keep focus in input
+  }
+};
 
 const handleCorporateSubmit = async () => {
   const payload = {
@@ -100,6 +105,8 @@ const handleCorporateSubmit = async () => {
     };
   }, []);
 
+
+
 return (
  <div className="mainbox">
 
@@ -144,9 +151,15 @@ return (
   <div className={selectRef.current.status === "open"
     ? "pill-options-flex"
     : "pill-options" } >
-    <div className="pill-option" id="1">xhtml</div>
-    <div className="pill-option" id="2">html</div>
-    <div className="pill-option" id="3">text</div>
+        <div className="pill-option" id="1" onClick={() => handlePillClick("--filetype=xhtml")}>
+          --filetype=xhtml
+        </div>
+        <div className="pill-option" id="2" onClick={() => handlePillClick("--filetype=html")}>
+          --filetype=html
+        </div>
+        <div className="pill-option" id="3" onClick={() => handlePillClick("--filetype=text")}>
+          --filetype=text
+        </div>
   </div>
     </div>
       </div> {/* closes filterbox */}
@@ -172,12 +185,12 @@ return (
   </div> {/* closes leftbox */}
 
   <div className="rightbox">
-    <div className="sitepreviewbox">
+    <div className="rightbox sitepreviewbox">
 
         <SmartDumpBox items={urls.map((url) => url)} />
   </div>
-      <div className="answerbox">
-          <SmartDumpBox items={urls.map((url) => url)} />
+      <div className="rightbox answerbox">
+          <SmartDumpBox items={messages} />
       </div> {/* closes answerbox */}
 
   </div> {/* closes rightbox */}

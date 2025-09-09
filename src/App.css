@@ -177,7 +177,15 @@
 }
 /* SmartInput special */
 .sitepreviewbox{
-  height: 70vh;
+  width: 78vw;
+  height: 60vh;
+  align-self: center;
+  overflow-y: auto; 
+}
+
+.sitepreviewbox > .smartdumpbox {
+  flex: 1;               /* child will shrink/stretch inside */
+  min-height: 0;         /* important: prevents child from overflowing */
 }
 
 .answerbox{
