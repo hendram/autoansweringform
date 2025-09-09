@@ -4,6 +4,7 @@ import SmartInput from "./SmartInputTextDynamic/src/App.jsx";
 import SmartDumpBox from "./SmartDumpBox/src/App.jsx";
 
 export default function App() {
+  const selectRef = useRef({status: closed});
   const corporateRef = useRef(null);
   const topicRef = useRef(null);
   const searchedRef = useRef(null);
@@ -13,6 +14,14 @@ export default function App() {
 
   const [messages, setMessages] = useState([]);
   const [urls, setUrls] = useState([]);
+
+  const [, forceUpdate] = useState(false);
+
+  const toggleDropdown = () => {
+    selectRef.current.status =
+      selectRef.current.status === "closed" ? "open" : "closed";
+    forceUpdate((prev) => !prev); // trigger re-render
+  };
 
   // Handle Filter Change
    const handleFilterChange = (e) => {
@@ -92,76 +101,87 @@ const handleCorporateSubmit = async () => {
   }, []);
 
 return (
-  <div className="main-layout">
-    {/* Left side form */}
-    <div className="app">
-      <h2 className="app-title">Q&amp;A Generator Checker</h2>
+ <div className="mainbox">
 
-<div className="field corporate-field">
-  <label className="field-label">Corporate Knowledge Based Url</label>
-  <input ref={corporateRef} type="text" className="field-input" />
-</div>
+  <div className="leftbox">
 
-<div className="field corporate-field">
-  <label className="field-label">Topic</label>
-  <input ref={topicRef} type="text" className="field-input" />
-</div>
+    <div className="leftbox corporatekb">
+      <div className="leftbox corporatekburl">
+        <label className="label">Corporate Knowledge Based Url</label>
+        <div className="outsideinput">
+          <input ref={corporateRef} type="text" className="input" />
+        </div>
+      </div> {/* closes corporatekburl */}
 
+      <div className="leftbox corporatetopic">
+        <label className="label">Topic</label>
+        <div className="outsideinput">
+          <input ref={topicRef} type="text" className="input" />
+        </div>
+      </div> {/* closes corporatetopic */}
 
-<button onClick={handleCorporateSubmit} className="submit-btn">
-  Submit Corporate
-</button>
+      <button onClick={handleCorporateSubmit} className="leftbox topicsubmit">
+        Submit Topic
+      </button>
+    </div> {/* closes corporatekb */}
 
-      <div className="field search-field">
-        <label className="field-label">Searched</label>
-        <input ref={searchedRef} type="text" className="field-input" />
+    <div className="leftbox externalkb">
+
+      <div className="leftbox searchbox">
+        <label className="label">Searched</label>
+        <div className="outsideinput">
+          <input ref={searchedRef} type="text" className="input" />
+        </div>
+      </div> {/* closes searchbox */}
+
+      <div className="leftbox filterbox">
+        <label className="label">Filter</label>
+  <div className="leftbox selectanchor">
+   <div className="leftbox custom-select" onClick={toggleDropdown}>
+        <span className="selectwords">Select filter type</span>
+        <span className="arrow">{selectRef.current.status === "open" ? "▲" : "▼"}</span>
       </div>
+  <div className={selectRef.current.status === "open"
+    ? "pill-options-flex"
+    : "pill-options" } >
+    <div className="pill-option" id="1">xhtml</div>
+    <div className="pill-option" id="2">html</div>
+    <div className="pill-option" id="3">text</div>
+  </div>
+    </div>
+      </div> {/* closes filterbox */}
 
-      <div className="field filter-field">
-        <label className="field-label">Filter</label>
-        <select
-          ref={filterRef}
-          className="field-select"
-          onChange={handleFilterChange}
-        >
-          <option value="">-- Select File Type --</option>
-          <option value="--filetype=xhtml">xhtml</option>
-          <option value="--filetype=html">html</option>
-          <option value="--filetype=text">text</option>
-        </select>
-      </div>
+      <div className="leftbox searchenginebox">
+        <label className="label">Search Engine</label>
+        <div className="outsideinput">
+          <input ref={engineRef} type="text" className="input" />
+        </div>
+      </div> {/* closes searchenginebox */}
 
-      <div className="field engine-field">
-        <label className="field-label">Search Engine</label>
-        <input ref={engineRef} type="text" className="field-input" />
-      </div>
-
-      <div className="field smart-field">
-        <label className="field-label">Site</label>
-        <SmartInput ref={smartRef} className="smart-input" />
-      </div>
-
-      <button onClick={handleSubmit} className="submit-btn">
+      <div className="leftbox sitebox">
+        <label className="label">Site</label>
+        <div className="leftbox smartinputdiv">
+          <SmartInput ref={smartRef} className="smart-input" />
+     <button onClick={handleSubmit} className="leftbox externalsubmit">
         Submit
       </button>
+ </div>
+  </div> {/* closes sitebox */}
+    </div> {/* closes externalkb */}
 
-      {/* SSE Messages Section */}
-      <div className="messages">
-        <h3>Live Updates</h3>
-        <ul>
-          {messages.map((msg, i) => (
-            <li key={i}>{msg}</li>
-          ))}
-        </ul>
-      </div>
-    </div>
+  </div> {/* closes leftbox */}
 
-    {/* Right side previews */}
-    <div className="preview-panel">
-     <SmartDumpBox
-    items={urls.map((url) => url)} // urls from SmartInput
-  />
-   </div>
+  <div className="rightbox">
+    <div className="sitepreviewbox">
+
+        <SmartDumpBox items={urls.map((url) => url)} />
   </div>
-);
+      <div className="answerbox">
+          <SmartDumpBox items={urls.map((url) => url)} />
+      </div> {/* closes answerbox */}
+
+  </div> {/* closes rightbox */}
+
+</div> 
+)
 }
