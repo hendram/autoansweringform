@@ -173,12 +173,11 @@ return (
 
       <div className="leftbox sitebox">
         <label className="label">Site</label>
-        <div className="leftbox smartinputdiv">
-          <SmartInput ref={smartRef} className="smart-input" />
+       <SmartInput ref={smartRef} className="smart-input" />
      <button onClick={handleSubmit} className="leftbox externalsubmit">
         Submit
       </button>
- </div>
+
   </div> {/* closes sitebox */}
     </div> {/* closes externalkb */}
 
@@ -187,10 +186,10 @@ return (
   <div className="rightbox">
     <div className="rightbox sitepreviewbox">
 
-        <SmartDumpBox items={urls.map((url) => url)} />
+        <SmartDumpBox items={urls.map((url) => url)}  height="60vh" />
   </div>
       <div className="rightbox answerbox">
-          <SmartDumpBox items={messages} />
+          <SmartDumpBox items={messages} height="30vh" />
       </div> {/* closes answerbox */}
 
   </div> {/* closes rightbox */}

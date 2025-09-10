@@ -7,13 +7,14 @@
   justify-content: center;
   align-items: center;
   gap: 1vh;
+  background-color: #f5f7fa;
 }
 
 .leftbox {
   display: flex;
   flex-direction: column;
-  width: 20vw;
-  height: 100vh;
+  width: 21vw;
+  height: auto;
   gap: 1vh;
   justify-content: center;
   align-items: center;
@@ -30,8 +31,10 @@
 .label {
   display: block;
   align-self: flex-start;
-  font-style: Helvetica, Arial, Sans;
+  font-family: Helvetica, Arial, Sans;
   font-weight: 500;
+  margin-left: 1vw;
+  color: black;
 }
 
 .outsideinput {
@@ -61,13 +64,24 @@
   height: 5vh;
   width: 15vw;
   align-self: flex-end;
-  background-color: blue;
+  background-color: gainsboro;
   border: 0.1vw solid black;
   border-radius: 5vw;
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+.topicsubmit: hover {
+  height: 5vh;
+  width: 15vw;
+  align-self: flex-end;
+  background-color: #9333ea;
+  border: 0.1vw solid black;
+  border-radius: 5vw;
+  font-family: Helvetica, Arial, sans-serif;
 }
 
 .externalkb {
-  min-height: 73vh;
+  height: auto;
   justify-content: start;
 }
 
@@ -93,6 +107,7 @@
   border: 0.1vw solid black;
   border-radius: 5vw;
   cursor: pointer;
+  background-color: lavender;
 }
 
 .selectwords{
@@ -100,13 +115,19 @@
  flex-direction: row;
  justify-content: center;
  align-self: center;
- width: 17vw;
+ width: 16vw;
  height: 4vh;
+ font-family: Helvetica, Arial, sans-serif;
+ color: black;
+ background-color: lavender;
 }
  
 .arrow {
   font-size: 1.8vw;
-  pointer-events: none; /* so click still hits parent */
+  color: #9333ea;   /* makes only the arrow purple */
+  background: none; /* remove the purple box */
+  line-height: 1;   /* tighten spacing */
+  pointer-events: none;
 }
 
 .pill-options {
@@ -134,7 +155,9 @@
   cursor: pointer;
   height: 5vh;
   width: 19vw;
-  background-color: blue;
+  background-color: gainsboro;
+  color: black;
+  font-family: Helvetica, Arial, sans-serif;
 }
 
 .searchenginebox {
@@ -142,34 +165,34 @@
 }
 
 .sitebox {
-  height: 17vh;
+  height: auto;
 }
 
 .smartinputdiv {
-  min-height: 14vh;
+  height: auto;
+  display: block;
 }
 
 .smart-input {
-  background: transparent !important;
-  border: none !important;
-  box-shadow: none !important;
-  outline: none !important;
-  width: 19vw;
+  width: 20vw;
+  height: auto;
+  display: block;
 }
 
 .externalsubmit {
   height: 5vh;
   width: 10vw;
   align-self: flex-end;
-  background-color: blue;
+  background-color: gainsboro;
   border-radius: 5vw;
   border: 0.1vw solid black;
+  font-family: Helvetica, Arial, sans-serif;
 }
 
 .rightbox {
   display: flex;
   flex-direction: column;
-  width: 80vw;
+  width: 78vw;
   height: 100vh;
   gap: 1vh;
   justify-content: center;
@@ -178,14 +201,13 @@
 /* SmartInput special */
 .sitepreviewbox{
   width: 78vw;
-  height: 60vh;
+  max-height: 60vh;
   align-self: center;
-  overflow-y: auto; 
 }
 
 .sitepreviewbox > .smartdumpbox {
   flex: 1;               /* child will shrink/stretch inside */
-  min-height: 0;         /* important: prevents child from overflowing */
+  height: 60vh;         /* important: prevents child from overflowing */
 }
 
 .answerbox{
