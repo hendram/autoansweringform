@@ -2,6 +2,7 @@ import React, { useRef, useState, useEffect } from "react";
 import "./App.css";
 import SmartInput from "./SmartInputTextDynamic/src/App.jsx";
 import SmartDumpBox from "./SmartDumpBox/src/App.jsx";
+import { getEventSource } from './sseSingleton';
 
 export default function App() {
   const selectRef = useRef({status: closed});
@@ -87,25 +88,22 @@ const handleCorporateSubmit = async () => {
   };
 
   // Setup SSE Connection
-  useEffect(() => {
-    const evtSource = new EventSource("http://localhost:3000/stream");
+useEffect(() => {
+  const es = getEventSource('http://localhost:3000/stream');
 
-    evtSource.onmessage = (event) => {
-      console.log("SSE message:", event.data);
-      setMessages((prev) => [...prev, event.data]);
-    };
+  const handleMessage = (e) => {
+    console.log("Received:", e.data);
+setMessages((currentMessages) => [...currentMessages, e.data]);
+  
+};
 
-    evtSource.onerror = (err) => {
-      console.error("SSE error:", err);
-      evtSource.close();
-    };
+  es.addEventListener('message', handleMessage);
 
-    return () => {
-      evtSource.close();
-    };
-  }, []);
-
-
+  return () => {
+    es.removeEventListener('message', handleMessage);
+    // note: we don't close EventSource here because it's shared
+  };
+}, []);
 
 return (
  <div className="mainbox">
