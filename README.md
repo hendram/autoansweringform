@@ -84,3 +84,60 @@ docker exec -it confident_bhaskara /bin/bash
 cd /home/autoansweringform
 npm run dev
 ```
+
+🚀 How to Run All Containers
+
+You’ll be running 8 containers in total:
+
+🗄️ kafka-tidb
+
+📝 autoansweringform
+
+🕷️ puppeteerworker1
+
+🕷️ puppeteerworker2
+
+🕷️ puppeteerworker3
+
+🌐 puppeteerservice
+
+⚙️ chunkgeneratorforaimodel
+
+🧠 vectorembedgen
+
+
+---
+
+✅ Recommended Startup Sequence
+
+
+1️⃣ Start Core Services
+
+Run kafka-tidb first (foundation for messaging + database).
+
+
+2️⃣ Launch Puppeteer Workers & Service
+
+Start these together:
+
+🌐 puppeteerservice
+
+🕷️ puppeteerworker1
+
+🕷️ puppeteerworker2
+
+🕷️ puppeteerworker3
+
+3️⃣ Initialize Chunk Generator
+
+Run chunkgeneratorforaimodel to prepare and dispatch jobs.
+
+4️⃣ Start Vector Embedder
+
+Run vectorembedgen to generate and store embeddings.
+
+5️⃣ Deploy Auto-Answering Service
+
+Finally, start autoansweringform for the application layer.
+
+
