@@ -140,6 +140,10 @@ Run vectorembedgen to generate and store embeddings.
 
 Finally, start autoansweringform for the application layer.
 
+---
+
+## 🚀 How To Test It?
+
 
 # 📝 Scenario 1
 
