@@ -47,7 +47,7 @@ There are several scenarios where this **frontend app** can be applied:
 
 ---
 
-🚀 Getting Started
+##🚀 Getting Started
 
 Download the Image
 
@@ -55,13 +55,13 @@ Download the Image
 docker pull ghcr.io/hendram/autoansweringform
 ```
 
-▶️ Start
+##▶️ Start
 
 ```bash
 docker run -it -d --network=host ghcr.io/hendram/autoansweringform bash
 ```
 
-🔍 Check Running Container
+##🔍 Check Running Container
 
 ```bash
 docker ps
@@ -72,20 +72,20 @@ CONTAINER ID   IMAGE                                  NAME                  STAT
 123abc456def   ghcr.io/hendram/autoansweringform      confident_bhaskara    Up 5 minutes
 ```
 
-📦 Enter Container
+##📦 Enter Container
 
 ```bash
 docker exec -it confident_bhaskara /bin/bash
 ```
 
-🏃 Run the Service
+##🏃 Run the Service
 
 ```bash
 cd /home/autoansweringform
 npm run dev
 ```
 
-🚀 How to Run All Containers
+##🚀 How to Run All Containers
 
 You’ll be running 8 containers in total:
 
@@ -108,7 +108,7 @@ You’ll be running 8 containers in total:
 
 ---
 
-✅ Recommended Startup Sequence
+##✅ Recommended Startup Sequence
 
 
 1️⃣ Start Core Services
@@ -130,7 +130,7 @@ Start these together:
 
 3️⃣ Initialize Chunk Generator
 
-Run chunkgeneratorforaimodel to prepare and dispatch jobs.
+## Run chunkgeneratorforaimodel to prepare and dispatch jobs.
 
 4️⃣ Start Vector Embedder
 
