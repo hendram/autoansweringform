@@ -54,7 +54,6 @@ const handleCorporateSubmit = async () => {
     });
 
     const data = await res.json();
-    console.log("Corporate Response:", data);
   } catch (err) {
     console.error("Corporate Error:", err);
   }
@@ -73,8 +72,6 @@ const handleCorporateSubmit = async () => {
       }
     };
 
-    console.log("Sending payload:", payload);
-
     try {
       const res = await fetch("http://localhost:3000/search", {
         method: "POST",
@@ -83,7 +80,6 @@ const handleCorporateSubmit = async () => {
       });
 
       const data = await res.json();
-      console.log("Response:", data);
     } catch (err) {
       console.error("Error:", err);
     }
@@ -109,8 +105,6 @@ useEffect(() => {
     // note: we don't close EventSource here because it's shared
   };
 }, []);
-
-console.log("messages", messages);
 
 return (
  <div className="mainbox">
