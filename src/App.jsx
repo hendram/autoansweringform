@@ -15,6 +15,8 @@ export default function App() {
 
   const [messages, setMessages] = useState([]);
   const [urls, setUrls] = useState([]);
+    const [currentIndex, setCurrentIndex] = useState(0);
+
 
   const [, forceUpdate] = useState(false);
 
@@ -92,9 +94,12 @@ useEffect(() => {
   const es = getEventSource('http://localhost:3000/stream');
 
   const handleMessage = (e) => {
-    console.log("Received:", e.data);
-setMessages((currentMessages) => [...currentMessages, e.data]);
-  
+  try {
+    const parsed = JSON.parse(e.data); // if it's valid JSON
+    setMessages((curr) => [...curr, parsed]);
+  } catch {
+    setMessages((curr) => [...curr, e.data]); // fallback plain string
+  }  
 };
 
   es.addEventListener('message', handleMessage);
@@ -104,6 +109,8 @@ setMessages((currentMessages) => [...currentMessages, e.data]);
     // note: we don't close EventSource here because it's shared
   };
 }, []);
+
+console.log("messages", messages);
 
 return (
  <div className="mainbox">
@@ -184,10 +191,12 @@ return (
   <div className="rightbox">
     <div className="rightbox sitepreviewbox">
 
-        <SmartDumpBox items={urls.map((url) => url)}  height="60vh" />
+        <SmartDumpBox items={urls.map((url) => url)}  height="60vh"   currentIndex={currentIndex}
+        setCurrentIndex={setCurrentIndex} />
   </div>
       <div className="rightbox answerbox">
-          <SmartDumpBox items={messages} height="30vh" />
+          <SmartDumpBox items={messages} height="30vh"  currentIndex={currentIndex}
+        setCurrentIndex={setCurrentIndex} />
       </div> {/* closes answerbox */}
 
   </div> {/* closes rightbox */}
