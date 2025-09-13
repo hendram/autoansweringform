@@ -81,6 +81,6 @@ docker exec -it confident_bhaskara /bin/bash
 🏃 Run the Service
 
 ```bash
-cd /home/autoansweringform/src
+cd /home/autoansweringform
 npm run dev
 ```
