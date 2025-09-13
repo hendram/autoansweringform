@@ -23,7 +23,7 @@ The **AutoAnsweringForm AI Agent** is designed to support multiple scenarios whe
 
 ---
 
-## 🚀 How to Use It?
+## 🚀 Where It May Use It?
 
 There are several scenarios where this **frontend app** can be applied:
 
@@ -140,4 +140,106 @@ Run vectorembedgen to generate and store embeddings.
 
 Finally, start autoansweringform for the application layer.
 
+
+# 📝 Scenario 1
+
+### 🏢 Test to populate corporate knowledgebase database  
+
+🔹 **Put this inside Corporate Knowledge Based Url input**  
+👉 [https://hendram.github.io/Knowledgebasetidb/](https://hendram.github.io/Knowledgebasetidb/)  
+
+🔹 **Put this into Topic:**  
+👉 `tidb vector search`  
+
+✅ **Click**: `Submit Topic`  
+
+---
+
+### 🌐 Test to populate external database scrap from internet  
+
+🔹 **Put this into Searched input:**  
+👉 `tidb vector search`  
+
+🔽 **On Filter click down arrow, and click each of the options:**  
+- `--filetype=xhtml`  
+- `--filetype=html`  
+- `--filetype=text`  
+
+⬆️ **Click the arrow to close it back**  
+
+🔹 **Put this into Search Engine input:**  
+👉 `search.brave.com`  
+
+🔹 **Put this into Site just one url per submit to test if just search for answer works or not later on, so put just one first here:**  
+👉 [https://docs.google.com/forms/d/e/1FAIpQLSc7PUBn8q6IWhBGBHzZ1NlhG-v0Cyzb-JA-JD64NQpN0DF9MA/viewform?usp=dialog](https://docs.google.com/forms/d/e/1FAIpQLSc7PUBn8q6IWhBGBHzZ1NlhG-v0Cyzb-JA-JD64NQpN0DF9MA/viewform?usp=dialog)  
+
+✅ **Click**: `Submit`  
+
+---
+
+### ❓ Test to get answer from any Q&A url that not inputted in the beginning, but external or internal or both table has been created  
+
+✏️ **Just remove one character on existing and add it again to make + - button show up**  
+
+➕ **Click + button**  
+
+🔹 **Put second url on the second input Site:**  
+👉 [https://docs.google.com/forms/d/e/1FAIpQLScGTW4qCBivaJr2RXW6OgSnsmgvDZMMB9KLNbB4ilahRx5XBw/viewform?usp=dialog](https://docs.google.com/forms/d/e/1FAIpQLScGTW4qCBivaJr2RXW6OgSnsmgvDZMMB9KLNbB4ilahRx5XBw/viewform?usp=dialog)  
+
+➕ **Click + button again, if already gone just remove one character and add again**  
+
+🔹 **Put third url on the third input site:**  
+👉 [https://docs.google.com/forms/d/e/1FAIpQLScoYJWCGzBfkByhudH-Jaxj-3DWtS1JlZ21AYaUrawtTGJ0yg/viewform?usp=dialog](https://docs.google.com/forms/d/e/1FAIpQLScoYJWCGzBfkByhudH-Jaxj-3DWtS1JlZ21AYaUrawtTGJ0yg/viewform?usp=dialog)  
+
+---
+
+# 📝 Scenario 2  
+
+### 🏢 Test to populate corporate knowledgebase database  
+
+🔹 **Put this inside Corporate Knowledge Based Url input**  
+👉 [https://hendram.github.io/Knowledgebase/](https://hendram.github.io/Knowledgebase/)  
+
+🔹 **Put this into Topic:**  
+👉 `mongodb rag`  
+
+✅ **Click**: `Submit Topic`  
+
+---
+
+### 🌐 Test to populate external database scrap from internet  
+
+🔹 **Put this into Searched input:**  
+👉 `mongodb rag`  
+
+🔽 **On Filter click down arrow, and click each of the options:**  
+- `--filetype=xhtml`  
+- `--filetype=html`  
+- `--filetype=text`  
+
+⬆️ **Click the arrow to close it back**  
+
+🔹 **Put this into Search Engine input:**  
+👉 `search.brave.com`  
+
+🔹 **Put this into Site just one url per submit to test if just search for answer works or not later on, so put just one first here:**  
+👉 [https://docs.google.com/forms/d/e/1FAIpQLSfNCiKsb-vRB9aG7DvJKFk7mqEmbC411YvuTusPBD999kj4cA/viewform?usp=dialog](https://docs.google.com/forms/d/e/1FAIpQLSfNCiKsb-vRB9aG7DvJKFk7mqEmbC411YvuTusPBD999kj4cA/viewform?usp=dialog)  
+
+✅ **Click**: `Submit`  
+
+---
+
+### ❓ Test to get answer from any Q&A url that not inputted in the beginning, but external or internal or both table has been created  
+
+✏️ **Just remove one character on existing and add it again to make + - button show up**  
+
+➕ **Click + button**  
+
+🔹 **Put second url on the second input Site:**  
+👉 [https://docs.google.com/forms/d/e/1FAIpQLSfRj7VFEAZJIm8HgE3lk0K_b5i9w0mgX9G2_XntzbptuURYiw/viewform?usp=dialog](https://docs.google.com/forms/d/e/1FAIpQLSfRj7VFEAZJIm8HgE3lk0K_b5i9w0mgX9G2_XntzbptuURYiw/viewform?usp=dialog)  
+
+➕ **Click + button again, if already gone just remove one character and add again**  
+
+🔹 **Put third url on the third input site:**  
+👉 [https://docs.google.com/forms/d/e/1FAIpQLSdarhQiEV1AqQzPvtSXx2ZxGAJIYvIgHOb3XE9xcHDUoGVMcQ/viewform?usp=dialog](https://docs.google.com/forms/d/e/1FAIpQLSdarhQiEV1AqQzPvtSXx2ZxGAJIYvIgHOb3XE9xcHDUoGVMcQ/viewform?usp=dialog)  
 
