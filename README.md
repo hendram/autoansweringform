@@ -111,12 +111,12 @@ You’ll be running 8 containers in total:
 ## ✅ Recommended Startup Sequence
 
 
-1️⃣ Start Core Services
+###  1️⃣ Start Core Services
 
 Run kafka-tidb first (foundation for messaging + database).
 
 
-2️⃣ Launch Puppeteer Workers & Service
+###  2️⃣ Launch Puppeteer Workers & Service
 
 Start these together:
 
@@ -128,15 +128,15 @@ Start these together:
 
 🕷️ puppeteerworker3
 
-3️⃣ Initialize Chunk Generator
+###  3️⃣ Initialize Chunk Generator
 
-##  Run chunkgeneratorforaimodel to prepare and dispatch jobs.
+  Run chunkgeneratorforaimodel to prepare and dispatch jobs.
 
-4️⃣ Start Vector Embedder
+###  4️⃣ Start Vector Embedder
 
 Run vectorembedgen to generate and store embeddings.
 
-5️⃣ Deploy Auto-Answering Service
+###  5️⃣ Deploy Auto-Answering Service
 
 Finally, start autoansweringform for the application layer.
 
@@ -375,12 +375,6 @@ Appends received messages to messages state.
 
 Removes event listener (but does not close EventSource since it’s shared via singleton).
 
-
-###  Render
-
-Wraps everything in <div className="mainbox">.
-
-Starts with a <div className="leftbox"> (your snippet got cut here, so details of UI rendering are missing).
 
 ---
 
