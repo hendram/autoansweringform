@@ -47,6 +47,18 @@ There are several scenarios where this **frontend app** can be applied:
 
 ---
 
+# High Level Flow Overview
+
+**Process happened when user click Submit button**
+
+![Process When click Submit] ./externalkb.png
+
+**Process happened when user click Submit Topic button**
+
+![Process when click Submit Topic] ./internalkb.png
+
+---
+
 ## 🚀 Getting Started
 
 ####  Download the Image
