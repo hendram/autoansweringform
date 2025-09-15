@@ -307,7 +307,7 @@ The backend has **unique implementations** using **Kafka** for message delivery 
 ###  Vector Embedgen Container 🔍
 - Performs **vectorized search** on indexed **TiDB Cloud**.
 
-###  Logging system using professional log format  ^=^t^m
+###  Logging system using professional log format  
 - Logging to console not dump all messages from object, but formatted as levels, and timestamped ready to be
   collected using grafana, redirect to syslog or any other professional logging tools
 
