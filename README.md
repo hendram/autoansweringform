@@ -357,7 +357,7 @@ handleCorporateSubmit → sends POST request with corporate + topic values to /s
 
 handleSubmit → sends POST request with searched term, search engine, and URLs (from SmartInput) to /search.
 
-SSE (Server-Sent Events) Setup
+###  SSE (Server-Sent Events) Setup
 
 
 ####  On mount:
