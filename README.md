@@ -54,13 +54,15 @@ There are several scenarios where this **frontend app** can be applied:
 <br>
 <br><br>
 ![Process When click Submit](./externalkb.png)
-
+<br>
+<br><br>
 
 **Process happened when user click Submit Topic button**
 <br>
 <br><br>
 ![Process when click Submit Topic](./internalkb.png)
-
+<br>
+<br><br>
 
 ---
 
