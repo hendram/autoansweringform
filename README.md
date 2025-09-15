@@ -195,7 +195,7 @@ Finally, start autoansweringform for the application layer.
 🔹 **Put third url on the third input site:**  
 👉 [https://docs.google.com/forms/d/e/1FAIpQLScoYJWCGzBfkByhudH-Jaxj-3DWtS1JlZ21AYaUrawtTGJ0yg/viewform?usp=dialog](https://docs.google.com/forms/d/e/1FAIpQLScoYJWCGzBfkByhudH-Jaxj-3DWtS1JlZ21AYaUrawtTGJ0yg/viewform?usp=dialog)  
 
- ^=^t  **Refresh the page every time change topic or searched keywords**   
+🔹 **Refresh the page every time change topic or searched keywords**
 
 ---
 
