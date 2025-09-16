@@ -66,6 +66,11 @@ There are several scenarios where this **frontend app** can be applied:
 
 ---
 
+# Container Relationship Diagram
+<br><br><br>
+![Container Relationship Diagram](./AutoansweringContainerConn.png)
+<br><br><br>
+
 ## 🚀 Getting Started
 
 ####  Download the Image
